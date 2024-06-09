@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #e4e9f7; /* Your purple background */
+}
+
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 900px; /* Adjust width as necessary */
+    min-height: 400px;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                0 32px 64px -48px rgba(0,0,0,0.5);
+    background: #fff; /* Background for the form and image */
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.form-box {
+    width: 50%;
+    min-height: 500px;
+    max-height: 600px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+}
+
+
+
+.box {
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+    justify-content: center;
+}
+
+.form-box header {
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 50px;
+    
+}
+
+.form-box form .field {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box form .input input {
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.btn {
+    height: 40px;
+    background: #2e2185;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all .3s;
+    margin-top: 10px;
+    padding: 0px 10px;
+
+}
+
+.btn:hover{
+    opacity: 0.82;
+}
+
+.submit{
+    width: 100%;
+}
+
+.link{
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+

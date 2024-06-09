@@ -1,0 +1,55 @@
+.container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin: 20px;
+}
+
+.container-header {
+    background-color: #f4f4f4;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.container-body {
+    padding: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: var(--blue2);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Styles for icons and actions */
+.action-icons {
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+}
+
+.action-icons:hover {
+    color: #007bff;
+}

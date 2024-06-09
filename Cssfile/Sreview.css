@@ -1,0 +1,356 @@
+:root{
+  --blue: #849bdc;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+  --blue2: #2e2185;
+}
+
+.action-icons {
+    display: flex;
+    gap: 10px; 
+    justify-content: flex-end;
+    margin-right: 80px;
+    
+  }
+  
+  .action-icons button {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; 
+    height: 30px;
+    color: white; 
+    font-size: 1.5em; 
+    border-radius: 5px; 
+  }
+
+  .eye-btn {
+    background-color: var(--blue); 
+  }
+  
+  
+  .edit-btn {
+    background-color: #4CAF50; 
+  }
+  
+  .view-btn {
+    background-color: #F44336; 
+  }
+
+  .list-btn{
+    background-color: rgb(222, 148, 84);
+}
+  
+  .action-icons button:hover {
+    opacity: 0.8;
+  }
+  .content {
+    padding-top: 50px; /* Space for the fixed header */
+}
+
+.header-space {
+    height: 50px; 
+}
+
+.review-header {
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    text-align: center; 
+    
+}
+
+.book-review {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: #FFFFFF; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 20px; 
+   
+}
+
+.book-cover {
+    width: 80px; /* Adjust based on your requirements */
+    margin-right: 10px;
+}
+
+.book-details {
+    flex-grow: 1;
+}
+.book-cover {
+    
+    border-radius: 50%;
+    border: 2px solid #000; 
+    object-fit: cover; 
+    width: 100px; 
+    height: 100px; 
+}
+
+/* The Modal (background) */
+
+.review-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; 
+  padding: 40px;
+  border: 1px solid #888;
+  width: 30%; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.modal-content span {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 10px; /* Spacing between buttons */
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+
+#addReviewForm textarea {
+  width: calc(100% - 20px); 
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  height: 100px; 
+  resize: none; 
+}
+
+#addReviewForm button {
+  background-color: var(--blue2); 
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#addReviewForm button:hover {
+  background-color: var(--blue) 
+}
+
+
+#edit-star-rating {
+  direction: rtl;
+  font-size: 0; 
+}
+
+#edit-star-rating> input {
+  display: none; 
+}
+
+#edit-star-rating > label {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 32px; 
+  color: #ccc; 
+}
+
+#edit-star-rating > label:before {
+  content: "\2605"; 
+}
+
+#edit-star-rating > input:checked ~ label {
+  color: #ffc700; 
+}
+
+#edit-star-rating> input:hover ~ label,
+#edit-star-rating> input:hover ~ label ~ label {
+  color: #ffdb00;
+}
+.rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.rating-container span {
+  margin-right: 10px;
+}
+
+
+#star-rating {
+  direction: rtl;
+  font-size: 0; 
+}
+
+#star-rating > input {
+  display: none; 
+}
+
+#star-rating > label {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 32px; 
+  color: #ccc; 
+}
+
+#star-rating > label:before {
+  content: "\2605"; 
+}
+
+#star-rating > input:checked ~ label {
+  color: #ffc700; 
+}
+
+#star-rating > input:hover ~ label,
+#star-rating > input:hover ~ label ~ label {
+  color: #ffdb00;
+}
+.rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.rating-container span {
+  margin-right: 10px;
+}
+
+/* Success Modal specific styles */
+.success-modal-content {
+  background-color: #fefefe;
+  margin: auto; 
+  position: fixed;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  min-width: 30;
+  height: auto; 
+  min-height: 150px; 
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  text-align: center; 
+  border-radius: 10px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 1050; 
+}
+
+
+/* The Close Button */
+.success-modal-content .close {
+  color: #aaa;
+  position: absolute;
+  top: -10px;
+  right: -10px; 
+  font-weight: bold;
+}
+
+.success-modal-content .close:hover,
+.success-modal-content .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.success-checkmark {
+  color: green; 
+  display: block; 
+  margin: 20px auto; 
+}
+
+.success-checkmark ion-icon {
+  font-size: 100px; 
+  display: block; 
+}
+
+.success-message {
+  font-size: 18px; 
+  color: #555; 
+  display: block; 
+  margin-top: 20px; 
+}
+
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1040;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+#editReviewForm textarea {
+  width: calc(100% - 20px); 
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  height: 100px; 
+  resize: none; 
+}
+
+#editReviewForm  button {
+  background-color: var(--blue2); 
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#editReviewForm  button:hover {
+  background-color: var(--blue) 
+}
+
+.star-rating {
+  display: flex; 
+  justify-content: center; 
+}
+
+.star {
+  color: gray; 
+  font-size: 24px;
+  margin-right: 5px; 
+}
+
+.star.filled {
+  color: gold; 
+}

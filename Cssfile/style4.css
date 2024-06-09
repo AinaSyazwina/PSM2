@@ -1,0 +1,1178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+h1{
+    margin-top: 10px;
+    text-align: center;
+}
+
+:root{
+    --blue: #849bdc;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+    --blue2: #2e2185;
+}
+.form {
+    margin-top: 30px;
+    margin-left: 20px; /* Add left margin to shift the form content */
+}
+
+.form-group {
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 20px; /* Add left margin to form elements */
+}
+
+.form-group label {
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group .count-label {
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 20px; /* Set the same margin-top as other labels */
+    /* Add any other specific styles */
+}
+
+
+.form-group input, .form-group select {
+    position: relative;
+    height: 50px;
+    width: calc(100% - 40px); /* Adjusted width to account for margin */
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+.button input[type="submit"] {
+    width: calc(100% - 40px); /* Adjusted width to account for margin */
+    margin-top: 20px; /* Added top margin for spacing */
+    margin-left: 20px; /* Added left margin for positioning */
+    margin-bottom: 20px;
+    height: 40px;
+    background: #4c44b6;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all .3s;
+    padding: 0px 10px;
+}
+
+.button input[type="submit"]:hover {
+    opacity: 0.82;
+    margin-left: 20px; /* Added left margin on hover */
+}
+
+/* Adjust left margin for checkbox and radio button */
+input[type="checkbox"], input[type="radio"] {
+    margin-left: 20px;
+}
+  .formradio{
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  input[type="radio"]{
+    margin: 10px 0
+}
+ 
+
+
+.custom-select {
+    width: calc(100% - 40px);
+    position: relative;
+    display: inline-block;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    font-size: 1.15rem;
+    padding: 0.675em 3em 0.675em 1em; /* Adjusted padding values */
+    background-color: #fff;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    color: #000;
+    cursor: pointer;
+}
+
+/* Style the arrow icon */
+.custom-select::after {
+    content: '\25BC'; /* Unicode down arrow */
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Style for the buttons container */
+.addBtn {
+    margin-top: 20px;
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    
+}
+
+/* Style for the submit and reset buttons */
+.addBtn input[type="submit"],
+.addBtn input[type="reset"],
+.addBtn button {
+    
+    padding: 10px 20px;
+    margin: 0; 
+    margin-left: 20px;
+    background-color: var(--blue2);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+   
+}
+
+.addBtn input[type="submit"]:hover,
+.addBtn input[type="reset"]:hover,
+.addBtn button:hover {
+    opacity: 0.8;
+}
+
+#saveBtn {
+    margin-left: 10px;
+    
+}
+
+#ClearBtn {
+    
+    margin-left: 10px;
+}
+
+.addBtn button {
+    
+    margin-left: 10px;
+}
+
+.error-message1 {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+.error-message {
+    color: red; 
+    font-size: 14px; 
+}
+
+/*aconfirm alert messag */
+
+
+.alert-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px; 
+    height: 100px; 
+    border: 2px solid red;
+    border-radius: 50%;
+    margin-top: 60px; 
+    margin-bottom: 20px; /* Space between the alert icon and message */
+
+}
+
+.alert-icon ion-icon[name='alert-outline'] {
+    color: red;
+    width: 50px;
+    height: 50px;
+}
+
+.deletebutton {
+     margin-top: 20px;
+     text-align: left;
+     display: inline-block;
+     margin-bottom: 20px;
+     justify-content: space-between; 
+      }
+      
+.deletebutton button{
+
+     padding: 5px 20px;
+     margin: 0; 
+     margin-left: 20px;
+     color: var(--white);
+      border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     font-size: 16px;
+     transition: all 0.3s ease;
+
+}
+
+.deletebtn{
+    background-color: #DC143C;
+}
+
+.cancelbtn{
+    background-color: var(--blue2);
+}
+
+
+.deletebutton button:hover {
+    opacity: 0.6;
+}
+
+
+.popup2 .overlay{
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 1000vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display:none;
+    overflow: auto;
+    }
+    
+    .popup2 .content{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 550px;
+    max-width: calc(100vw - 40px); /* Set maximum width for responsiveness */
+    height: 350px; /* Adjust height as needed */
+    max-height: calc(100vh - 40px); /* Set maximum height for responsiveness */
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    
+    }
+    
+    .popup2 .content .alert-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Adjust width as needed */
+    height: 80px; /* Adjust height as needed */
+    border: 2px solid red;
+    border-radius: 50%;
+    margin-bottom: 20px; /* Space between the alert icon and message */
+    }
+    
+    .popup2 .close-btn{
+    
+    position: absolute;
+    margin-bottom: 40px;
+    right: 20px;
+    top:20px;
+    width: 30px;
+    height: 30px;
+    background: #222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+    
+    .popup2 .overlay .content p{
+    
+    margin-top: 40px;
+    }
+    
+    .popup2.active .overlay{
+    display: block;
+    position: fixed;
+    }
+    
+    .popup2.active .content{
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+    }
+    
+
+    .popup3 .overlay{
+
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 1000vh;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+        display:none;
+        overflow: auto;
+        }
+        
+        .popup3 .content{
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background: #fff;
+        width: 550px;
+        max-width: calc(100vw - 40px); /* Set maximum width for responsiveness */
+        height: 350px; /* Adjust height as needed */
+        max-height: calc(100vh - 40px); /* Set maximum height for responsiveness */
+        z-index: 2;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto;
+        
+        }
+        
+        .popup3 .content .alert-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px; /* Adjust width as needed */
+        height: 80px; /* Adjust height as needed */
+        border: 2px solid red;
+        border-radius: 50%;
+        margin-bottom: 20px; /* Space between the alert icon and message */
+        }
+        
+        .popup3 .close-btn{
+        
+        position: absolute;
+        margin-bottom: 40px;
+        right: 20px;
+        top:20px;
+        width: 30px;
+        height: 30px;
+        background: #222;
+        color: #fff;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 30px;
+        text-align: center;
+        border-radius: 50%;
+        cursor: pointer;
+        }
+        
+        .popup3 .overlay .content p{
+        
+        margin-top: 40px;
+        }
+        
+        .popup3.active .overlay{
+        display: block;
+        position: fixed;
+        }
+        
+        .popup3.active .content{
+        transition: all 300ms ease-in-out;
+        transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .popup .overlay{
+
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100vw;
+            height: 1000vh;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+            display:none;
+            overflow: auto;
+            }
+            
+            .popup .content{
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: #fff;
+            width: 550px;
+            max-width: calc(100vw - 40px); /* Set maximum width for responsiveness */
+            height: 350px; /* Adjust height as needed */
+            max-height: calc(100vh - 40px); /* Set maximum height for responsiveness */
+            z-index: 2;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            
+            }
+            
+            .popup .content .alert-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px; /* Adjust width as needed */
+            height: 80px; /* Adjust height as needed */
+            border: 2px solid red;
+            border-radius: 50%;
+            margin-bottom: 20px; /* Space between the alert icon and message */
+            }
+            
+            .popup .close-btn{
+            
+            position: absolute;
+            margin-bottom: 40px;
+            right: 20px;
+            top:20px;
+            width: 30px;
+            height: 30px;
+            background: #222;
+            color: #fff;
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            cursor: pointer;
+            }
+            
+            .popup .overlay .content p{
+            
+            margin-top: 40px;
+            }
+            
+            .popup.active .overlay{
+            display: block;
+            position: fixed;
+            }
+            
+            .popup.active .content{
+            transition: all 300ms ease-in-out;
+            transform: translate(-50%, -50%) scale(1);
+            }
+            
+/*view book */
+
+.popup4 .overlay {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+    overflow: hidden;
+}
+
+.popup4 .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 650px;
+    max-width: calc(100vw - 40px); /* Set maximum width for responsiveness */
+    height: 550px; /* Adjust height as needed */
+    max-height: calc(100vh - 40px); /* Set maximum height for responsiveness */
+    z-index: 2;
+    text-align: center;
+    padding-top: 150px;
+    box-sizing: border-box;
+    overflow-y: auto;
+   
+}
+
+.popup4 .content .alert-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Adjust width as needed */
+    height: 80px; /* Adjust height as needed */
+    border: 2px solid red;
+    border-radius: 50%;
+    margin-bottom: 20px; /* Space between the alert icon and message */
+}
+
+.popup4 .close-btn {
+    position: absolute;
+    margin-bottom: 40px;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: #222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.popup4 .overlay .content p {
+    margin: 10px 0; /* Space on top and bottom between each data item */
+}
+
+.popup4.active .overlay {
+    display: block;
+    position: fixed;
+}
+
+.popup4.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup4 .content .book-Details {
+
+    max-width: 90%; /* Set a maximum width for responsiveness */
+    max-height: calc(90% - 40px); 
+    scroll-behavior: smooth;
+    
+   
+}
+
+/*view box */
+
+.popup5 .overlay {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+    overflow: hidden;
+}
+
+.popup5 .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 630px;
+    max-width: calc(100vw - 40px); /* Set maximum width for responsiveness */
+    height: 350px; /* Adjust height as needed */
+    max-height: calc(100vh - 40px); /* Set maximum height for responsiveness */
+    z-index: 2;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+   
+}
+
+.popup5 .content .alert-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Adjust width as needed */
+    height: 80px; /* Adjust height as needed */
+    border: 2px solid red;
+    border-radius: 50%;
+    margin-bottom: 20px; /* Space between the alert icon and message */
+}
+
+.popup5 .close-btn {
+    position: absolute;
+    margin-bottom: 40px;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: #222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.popup5 .overlay .content p {
+    margin: 10px 0; /* Space on top and bottom between each data item */
+}
+
+.popup5.active .overlay {
+    display: block;
+    position: fixed;
+}
+
+.popup5.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup5 .content .book-Details {
+
+    max-width: 90%; /* Set a maximum width for responsiveness */
+    max-height: calc(90% - 40px); 
+    scroll-behavior: smooth;
+    
+   
+}
+
+
+/*list book */
+.popup6 .overlay{
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 1000vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display:none;
+    overflow: auto;
+    }
+    
+    .popup6 .content{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 650px;
+    max-width: calc(100vw - 40px); /* Set maximum width for responsiveness */
+    height: 450px; /* Adjust height as needed */
+    max-height: calc(100vh - 40px); /* Set maximum height for responsiveness */
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    
+    }
+    
+    .popup6 .close-btn{
+    
+    position: absolute;
+    margin-bottom: 40px;
+    right: 20px;
+    top:20px;
+    width: 30px;
+    height: 30px;
+    background: #222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+    
+    .popup6 .overlay .content p{
+    
+    margin-top: 40px;
+    }
+    
+    .popup6.active .overlay{
+    display: block;
+    position: fixed;
+    }
+    
+    .popup6.active .content{
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* issue dashboard.php */
+.issuesBox{
+
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+     /*margin-top: 10px;*/
+}
+
+.issuesBox .issueHistory{
+
+    position: relative;
+    display:grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+
+}
+
+.issuesBox .issueHeader{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.issueHeader h2{
+    font-weight: 600;
+    color: var(--blue2);
+}
+
+.issueHeader .btn{
+
+    position:relative; 
+    padding: 5px 10px;
+    background: #2e2185;
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+}
+.issuesBox table{
+
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.issuesBox table thead td{
+    font-weight: 600;
+}
+
+.issuesBox .issueHistory table tr{
+
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.issuesBox .issueHistory table tr:last-child{
+    border-bottom: none;
+}
+.issuesBox .issueHistory table tbody tr:hover{
+
+    background: var(--blue2);
+    color: var(--white);
+}
+
+.issuesBox .issueHistory table tr td{
+    padding: 10px;
+
+}
+
+.issuesBox .issueHistory table tr td:last-child{
+    text-align: end;    
+}
+
+
+
+.status.return{
+    padding: 2px 4px;
+    background: #8de02c;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+} 
+
+.status.pending{
+    padding: 2px 4px;
+    background: #c1d116;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+} 
+
+.status.exceed{
+    padding: 2px 4px;
+    background: #DC143C;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+} 
+
+.status.late{
+    padding: 2px 4px;
+    background: #DC143C;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+} 
+
+.input-error {
+    border: 1px solid #f44336;
+}
+
+.error-message {
+    color: #f44336; 
+    font-size: 0.875em; 
+    margin-top: 4px; 
+}
+
+.chartContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    padding-bottom: 0;
+    min-width: 500px; 
+    padding-left: 50px; 
+}
+
+
+#statusPieChart {
+    width: 100%;
+    height: 400px; 
+    margin-bottom: 0;
+}
+
+.legendContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   min-height: 100%;
+    
+}
+
+.chartLegend {
+    width: 100%;
+    overflow-x: auto;
+    padding-top: 0; /* Adjust space with padding */
+  
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; 
+    margin-top: 0;
+    margin-bottom: 5px; /* Space between rows of legend items */
+}
+
+.legendIndicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.legendLabel {
+    font-size: 14px;
+}
+
+.statusTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0;
+    margin-bottom: 10px; /* Adjust the margin as needed */
+}
+.statusTable th, .statusTable td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd; /* Light grey border under each row */
+}
+
+.statusTable th {
+    background-color: #f2f2f2; /* Light grey background for the header */
+    color: black;
+}
+
+.legendIndicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Zebra striping for rows */
+.statusTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Style for positive values */
+.positive {
+    color: green;
+}
+
+/* Style for negative values */
+.negative {
+    color: red;
+}
+  /* Set the background color of the table header to blue */
+.statusTable th {
+    background-color: var(--blue2); /* Change this to the shade of blue you prefer */
+    color: white; /* Text color for the table header */
+}
+
+
+.book-image {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 1px solid #ccc;  
+}
+
+.box-image {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 1px solid #ccc;  
+}
+
+.pagination {
+    height: 30px;
+    display: flex;      
+    justify-content: flex-end; 
+    margin-top: 20px;    
+}
+
+.pagination a {
+    height: 30px;
+    padding: 4px 8px;    
+    margin: 2px;         
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    text-decoration: none;
+    color: #666;         
+    font-size: 0.85rem; 
+}
+
+.pagination a.active {
+    background-color: var(--blue2); 
+    color: white;
+    border-color: #4c44b6; 
+}
+.boxIssueHistory {
+    background: var(--lighter-white); /* slightly different background for differentiation */
+    margin-top: 20px; /* adds space between the book and box tables */
+}
+
+.boxIssueHistory .issueHeader h2 {
+    color: var(--darker-blue); /* subtle color change */
+}
+
+.boxIssueHistory .btn {
+    background: #1e1466; /* different button color */
+}
+
+.boxIssueHistory table tr:hover {
+    background: var(--darker-blue2); /* different hover color */
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2.0fr 1.5fr;;
+    grid-gap: 30px;
+}
+
+.container .issueRecords{
+    position: relative;
+display:grid;
+min-height: 500px;
+background: var(--white);
+padding: 10px;
+box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+border-radius: 20px;
+}
+
+.container .issueBoxH{
+
+    display: flex;
+justify-content: space-between;
+align-items: flex-start;
+}
+
+.container.issueRecords .issueBoxH h2 {
+    color: var(--darker-blue); 
+}
+.issueBoxH h2{
+    font-weight: 600;
+    color: var(--blue2);
+
+}
+
+.issueRecords table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.issueRecords table thead td{
+    font-weight: 600;
+    }
+
+.issueRecords .issueHistory table tr{
+
+color: var(--black1);
+border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.issueRecords table tbody tr:hover{
+background: var(--blue2);
+color: var(--white);
+}
+
+.container .issueRecords table tr td{
+padding: 10px;
+
+}
+ .container .issueRecords table tr td:last-child{
+text-align: end;    
+ }
+
+.chartContainer1 {
+background: #FFF; /* White background */
+padding: 20px;
+box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+border-radius: 20px;
+flex: 1 1 50%; /* Adjust width according to your layout needs */
+min-width: 500px; /* Minimum width to ensure the chart is visible properly */
+height: 400px; /* Matching height to table for alignment */
+ }
+            
+
+ /*delete confirm */
+ /* confirm delete message */
+
+.popup1 .overlay{
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 1000vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display:none;
+    overflow: auto;
+}
+
+.popup1 .content{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #fff;
+    width: 550px;
+    max-width: calc(100vw - 40px); /* Set maximum width for responsiveness */
+    height: 350px; /* Adjust height as needed */
+    max-height: calc(100vh - 40px); /* Set maximum height for responsiveness */
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+}
+
+.popup1 .content .alert-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Adjust width as needed */
+    height: 80px; /* Adjust height as needed */
+    border: 2px solid red;
+    border-radius: 50%;
+    margin-bottom: 20px; /* Space between the alert icon and message */
+}
+
+.popup1 .close-btn{
+
+    position: absolute;
+    margin-bottom: 40px;
+    right: 20px;
+    top:20px;
+    width: 30px;
+    height: 30px;
+    background: #222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.popup1 .overlay .content p{
+
+    margin-top: 40px;
+}
+
+.popup1.active .overlay{
+    display: block;
+    position: fixed;
+}
+
+.popup1.active .content{
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}

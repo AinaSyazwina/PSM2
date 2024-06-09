@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+ }
+
+ :root{
+   --blue: #849bdc;
+   --white: #fff;
+   --gray: #f5f5f5;
+   --black1: #222;
+   --black2: #999;
+   --blue2: #2e2185;
+    }
+
+.table1 {
+   border-collapse: collapse;
+    margin: 25px 0;
+   font-size: 0.9em;
+   min-width: 400px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+   margin-left: auto;
+   margin-right: auto;
+   }
+
+h1 {
+    text-align: center;
+    color: #006600;
+    font-size: xx-large;
+    font-family: 'Poppins',sans-serif;
+    
+}
+
+.table1 thead tr {
+     background-color: var(--blue2);
+     color: var(--white);
+     text-align: left;
+    }
+
+    .table1 th,
+    .table1 td {
+    padding: 12px 15px;
+    }
+
+    .table1 tbody tr {
+    border-bottom: 1px solid var(--black2);
+     }
+
+  .table1 tbody tr:nth-of-type(even) {
+   background-color: #f3f3f3;
+   }
+
+    .table1 tbody tr:last-of-type {
+    border-bottom: 2px solid var(--black2);
+      }
+
+      .table1 tbody tr.list1 {
+     
+     color: var(--black1);
+       }
+
+
+      

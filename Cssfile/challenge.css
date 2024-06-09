@@ -1,0 +1,89 @@
+
+.container-padding {
+    padding: 20px;
+}
+.header-section {
+    background-color: #e7f3ff;
+    padding: 40px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+.header-section .header-text {
+    max-width: 60%;
+}
+.header-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+.header-section p {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+.header-section img {
+    max-width: 30%;
+    height: auto;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.button-container a {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.button-container a.active {
+    background-color: #0056b3;
+}
+.loyalty-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.loyalty-card {
+    position: relative;
+    width: 500px;
+    height: 400px;
+    background: url('pic/Brown Minimalist Loyalty Card.png') no-repeat center center;
+    background-size: contain;
+}
+.loyalty-card span {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
+}
+.bubble1 { top: 165px; left: 77px; }
+.bubble2 { top: 165px; left: 145px; }
+.bubble3 { top: 165px; left: 218px; }
+.bubble4 { top: 165px; left: 285px; }
+.bubble5 { top: 165px; left: 355px; }
+.bubble6 { top: 225px; left: 77px; }
+.bubble7 { top: 225px; left: 145px; }
+.bubble8 { top: 225px; left: 218px; }
+.bubble9 { top: 225px; left: 285px; }
+.bubble10 { top: 225px; left: 355px; }
+.stamped {
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+}
+.stamped:after {
+    content: 'X';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #4CAF50;
+    font-size: 50px;
+    font-weight: bold;
+}

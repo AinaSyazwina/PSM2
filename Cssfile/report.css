@@ -1,0 +1,127 @@
+
+ .details{
+
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+}
+
+.BookList {
+    flex: 2; 
+    padding-right: 20px;
+}
+.details .BookList{
+
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    min-width: 1150px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px; 
+    width: calc(100% - 40px); 
+    box-sizing: border-box;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    align-items: flex-end;
+    justify-content: space-between; 
+    width: 100%; 
+}
+
+.field-container {
+    display: flex;
+    flex-direction: column;
+    width: calc(20% - 20px); 
+    align-items: flex-start;
+}
+
+
+.field-container > label {
+    margin-bottom: 5px; 
+}
+
+
+.field-container > select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    appearance: none; /* Remove native dropdown styling */
+    -webkit-appearance: none; /* Also for Safari */
+    -moz-appearance: none; /* Also for Firefox */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>'), url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22/%3E%3C/svg%3E');
+    background-position: right 10px center;
+    background-size: 12px; /* Size of the arrow image */
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+
+.submitbtn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px; 
+    flex-grow: 0; /* Prevent the button from growing */
+    flex-shrink: 0; 
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        flex-direction: column;
+    }
+
+    .field-container {
+        width: 100%; 
+    }
+}
+
+@media (min-width: 768px) {
+    .submitbtn {
+        margin-top: 0; /* Align the button with the bottom of the selects */
+        margin-left: 20px; /* Add some space on the left */
+    }
+}
+
+/*@media (min-width: 992px) {
+    .form-container {
+        margin: 20px;
+        max-width: 960px; 
+    }
+}
+*/
+.view {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.view .btn {
+    padding: 5px 10px;
+    background: #2e2185;
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+}

@@ -1,0 +1,180 @@
+/* Manage Box details CSS */
+.details {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px; /* Reduced from 30px for tighter spacing */
+}
+
+/* Box List specific styles */
+.details .BoxList {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    min-width: 1150px;
+    background: var(--white);
+    padding: 20px; /* Adjusted padding */
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+
+/* Box header styles */
+.details .boxHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0; 
+}
+
+.details .boxHeader h2 {
+    
+    color: var(--blue2);
+    margin-top: 0; 
+    margin-bottom: 0; 
+}
+
+/* Search box styles */
+.search {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.search label {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search label input {
+    width: 200px;
+    height: 30px;
+    border-radius: 30px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.search label ion-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+
+/* View All button styles */
+.view {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.view .btn {
+    padding: 5px 10px;
+    background: #2e2185;
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+}
+
+/* Table styles */
+.details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0; /* Reduced margin to bring table closer to header */
+}
+
+.details table thead th {
+    text-align: center;
+}
+
+.details .BoxList table tr {
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details .BoxList table tr:last-child {
+    border-bottom: none;
+}
+
+.details .BoxList table tbody tr:hover {
+    background: var(--blue2);
+    color: var(--white);
+}
+
+/* Table cell padding */
+.details .BoxList table tr td {
+    padding: 10px; /* Consistent padding for all cells */
+}
+
+.details table tr td:nth-child(5)
+ {
+    text-align: center; /* Adjust alignment as needed */
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.BoxList {
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    margin: auto;
+    max-width: 90%; 
+    overflow-x: auto; 
+}
+@media screen and (max-width: 1024px) {
+    .BoxList {
+        max-width: 95%; 
+    }
+}
+@media screen and (max-width: 768px) {
+   
+    th, td {
+        padding: 5px; 
+        font-size: 0.9em; 
+    }
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .BoxList {
+        max-width: 100%; 
+        padding: 10px; 
+    }
+
+    .BoxList h2 {
+        font-size: 1.5rem; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    
+    th, td {
+        padding: 4px; 
+        font-size: 0.8em; 
+    }
+      
+    .BoxList h2 {
+        font-size: 1.2rem;
+    }
+
+}

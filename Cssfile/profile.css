@@ -1,0 +1,69 @@
+.profile-container {
+    display: flex;
+    width: 1000px; /* Maintain set width */
+    height: auto; /* Adjust height based on content */
+    border-radius: 10px; /* Rounded corners for the outer container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    background: #fff;
+    margin: 50px auto; /* Centering the container */
+    max-width: 100%; /* Ensuring it doesn't exceed the viewport width */
+    overflow: hidden; /* Ensures no overflow */
+}
+
+.profile-sidebar {
+    background-color: #675EFA;
+    color: white;
+    text-align: center; /* Ensures text is centered */
+    padding: 40px;
+    width: 35%; /* Maintains increased width for the sidebar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    border-radius: 10px 0 0 10px; /* Rounded corners on the left */
+}
+.profile-main {
+    padding: 20px 40px;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: #f8f8f8;
+    border-radius: 0 10px 10px 0;
+}
+.profile-title {
+    font-size: 24px; /* Larger font size for the title */
+    color: #333; /* Dark grey for better contrast */
+    margin-bottom: 20px; /* More space below the title */
+}
+
+.info-container {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Full width for better alignment */
+}
+
+.info-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.profile-picture {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* Fully rounded corners for the image */
+    border: 4px solid white;
+    margin-bottom: 20px; /* Provides space below the image */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.profile-picture:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
