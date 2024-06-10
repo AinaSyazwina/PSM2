@@ -182,10 +182,11 @@ function closePopup() {
 
 ?>
 <h1>Box Form</h1>
+
 <form action="" method="post" id="boxform" onsubmit="return validateForm();" enctype="multipart/form-data">
 
     <div class="form-group">
-        <label for="BoxSerialNum">Box Serial Number:</label>
+        <label for="BoxSerialNum"  class="required">Box Serial Number:</label>
         <input type="text" name="BoxSerialNum" id="BoxSerialNum" required>
         <span class="error-message" data-error="BoxSerialNum">
         <?php echo isset($errors['BoxSerialNum']) ? $errors['BoxSerialNum'] : ''; ?>
@@ -193,7 +194,7 @@ function closePopup() {
     </div>
 
     <div class="form-group">
-        <label for="category">Category:</label>
+        <label for="category"  class="required">Category:</label>
         <select name="category" id="category">
             <option value="BookPanda">BookPanda</option>
             <option value="GrabBook">GrabBook</option>
@@ -202,13 +203,13 @@ function closePopup() {
     </div>
 
 
-    <div class="form-group">
-        <label for="DateCreate">Date Created:</label>
+    <div class="form-group" >
+        <label for="DateCreate"  class="required">Date Created:</label>
         <input type="date" name="DateCreate" id="DateCreate" required>
     </div>
 
     <div class="form-group">
-        <label for="BookQuantity">Book Quantity:</label>
+        <label for="BookQuantity"  class="required">Book Quantity:</label>
         <input type="text" name="BookQuantity" id="BookQuantity" required>
         <span class="error-message" data-error="BookQuantity">
         <?php echo isset($errors['BookQuantity']) ? $errors['BookQuantity'] : ''; ?>
@@ -216,7 +217,7 @@ function closePopup() {
     </div>
 
     <div class="form-group">
-        <label for="color">Color:</label>
+        <label for="color"  class="required">Color:</label>
         <select name="color" id="color">
             <option value="Pink">Pink</option>
             <option value="Green">Green</option>
@@ -225,7 +226,7 @@ function closePopup() {
     </div>
 
     <div class="form-group">
-        <label for="status">status:</label>
+        <label for="status"  class="required">status:</label>
         <select name="status" id="status">
             <option value="Open(For Issue)">Open(For Issue)</option>
             <option value="Close(For Issue)">Close(For Issue)</option>
@@ -234,7 +235,7 @@ function closePopup() {
     </div>
 
     <div class="form-group">
-    <label for="pic">Box Picture:</label>
+    <label for="pic"  class="required">Box Picture:</label>
     <input type="file" name="pic" id="pic">
     <?php if (!empty($errors['pic'])): ?>
         <div class="error-message"><?php echo $errors['pic']; ?></div>
