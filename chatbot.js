@@ -43,7 +43,8 @@ const generateResponse = (incomingChatLi) => {
 };
 
 function handleIntent(response, incomingChatLi) {
-    const intent = response.intents && response.intents.length > 0 ? response.intents[0] : null;
+    const intent = response.intents && response.intents.length > 0 ? 
+    response.intents[0] : null;
     const entities = response.entities;
 
     if (!intent) {
