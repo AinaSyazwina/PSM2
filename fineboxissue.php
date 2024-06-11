@@ -259,7 +259,7 @@ function resetForm() {
                 <label for="paymentFor">Payment For</label>
                 <select id="paymentFor" onchange="handleFineTypeChange()">
                     <option value="select">Select An Option</option>
-                    <option value="missing">Missing 15.00</option>
+                    <option value="missing">Missing Box 15.00</option>
                     <option value="damage">Damage 10.00</option>
                     <option value="missing_books">Missing Books</option>
                 </select>
