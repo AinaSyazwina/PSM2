@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sqlalchemy import create_engine
 
 app = Flask(__name__)
-engine = create_engine('mysql+pymysql://root:@localhost/PSM2')
+engine = create_engine('mysql+pymysql://root:@localhost/library')
 
 @app.route('/recommend/<member_id>')  
 def recommend(member_id):
