@@ -8,7 +8,7 @@ if ($fp = @fsockopen($host, $port, $errCode, $errStr, $waitTimeoutInSeconds)) {
     fclose($fp); // Close the connection if it's successful
 } else {
     // Start the Flask server if it's not running
-    exec('C:\\xampp\\htdocs\\library\\run_flask.bat');
+    exec('C:\\xampp\\htdocs\\PSM2\\run_flask.bat');
     sleep(5);  // Give it some time to start
 }
 
