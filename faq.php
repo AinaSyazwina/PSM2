@@ -8,7 +8,7 @@
     <style>
         
         .faq-header {
-            background-color: #ffefef; 
+            background-color: #F0F8FF; 
             padding: 60px 20px;
             width: 100%; 
             margin: 0 auto; 

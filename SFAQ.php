@@ -13,7 +13,7 @@
             margin: 0;
         }
         .faq-header {
-            background-color: #ffefef; /* Light pink background */
+            background-color: #F0F8FF; /* Light pink background */
             padding: 60px 20px;
             width: 100%; /* Full width */
             margin: 0 auto; /* Center aligned */
