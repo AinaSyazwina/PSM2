@@ -1,5 +1,5 @@
 <?php
-include 'navigaStu.php';
+include 'navigaLib.php';
 ?>
 
 <!DOCTYPE html>
