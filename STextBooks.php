@@ -1,2 +1,2 @@
 <?php
-include 'navigaStu.php';?>
+include 'navigaStu.php';?>fff
