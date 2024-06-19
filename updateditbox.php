@@ -1,50 +1,57 @@
-<?php 
+<?php
 include 'config.php';
-$uploadDir = 'uploads/'; 
-$errors = []; 
+
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $BoxSerialNum = $_POST['BoxSerialNum'];
-
-    $query = "SELECT * FROM boxs WHERE BoxSerialNum = ?";
-    $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, "s", $BoxSerialNum);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-    $boxData = mysqli_fetch_assoc($result);
-    mysqli_stmt_close($stmt);
-
-    if (!$boxData) {
-        echo "Box not found.";
-        exit;
-    }
-
     $category = $_POST['category'];
     $DateCreate = $_POST['DateCreate'];
     $BookQuantity = $_POST['BookQuantity'];
     $color = $_POST['color'];
     $status = $_POST['status'];
+    $pictureToUse = $_POST['existingPicture'];
 
-    $pictureToUse = $boxData['Boxpicture'];
+    $errors = [];
+
+    // Validation
+    if (empty($BookQuantity) || !ctype_digit($BookQuantity)) {
+        $errors['BookQuantity'] = 'Book Quantity is required and must be an integer.';
+    }
+
+    if ($category == 'BookPanda' && $color != 'Pink') {
+        $errors['color'] = 'Invalid color for BookPanda. Only Pink is allowed.';
+    } elseif ($category == 'GrabBook' && $color != 'Green') {
+        $errors['color'] = 'Invalid color for GrabBook. Only Green is allowed.';
+    }
 
     // Handle file upload
     if (isset($_FILES['pic']) && $_FILES['pic']['error'] === UPLOAD_ERR_OK) {
         $pic = $_FILES['pic'];
-        $fileName = time() . '_' . basename($pic['name']);
-        $picturePath = $uploadDir . $fileName;
+        $fileType = $pic['type'];
+        $fileSize = $pic['size'];
+        $allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+        $maxFileSize = 5 * 1024 * 1024; // 5 MB
 
-        if (!file_exists($uploadDir)) {
-            mkdir($uploadDir, 0777, true);
-        }
+        if (in_array($fileType, $allowedTypes) && $fileSize <= $maxFileSize) {
+            $fileName = time() . '_' . basename($pic['name']);
+            $picturePath = $uploadDir . $fileName;
 
-        if (move_uploaded_file($pic['tmp_name'], $picturePath)) {
-            $pictureToUse = mysqli_real_escape_string($conn, $picturePath);
+            if (!file_exists($uploadDir)) {
+                mkdir($uploadDir, 0777, true);
+            }
 
-            if (!empty($boxData['Boxpicture']) && $boxData['Boxpicture'] !== $pictureToUse) {
-                unlink($boxData['Boxpicture']);
+            if (move_uploaded_file($pic['tmp_name'], $picturePath)) {
+                $pictureToUse = mysqli_real_escape_string($conn, $picturePath);
+                // If new image is uploaded successfully, update the path and remove the old file if it's different
+                if (!empty($boxData['Boxpicture']) && $boxData['Boxpicture'] !== $pictureToUse) {
+                    unlink($boxData['Boxpicture']); // This deletes the old image
+                }
+            } else {
+                $errors['pic'] = 'There was an error uploading the file.';
             }
         } else {
-            $errors['pic'] = 'There was an error uploading the file.';
+            $errors['pic'] = 'Invalid file type or size exceeds the limit.';
         }
     }
 
@@ -61,5 +68,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $errors['database'] = "Error updating record: " . mysqli_error($conn);
         }
     }
+
+    // Store errors and redirect back to edit page
+    $_SESSION['errors'] = $errors;
+    header("Location: editbox.php?BoxSerialNum=$BoxSerialNum");
+    exit;
 }
 ?>

@@ -18,8 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $picturePath = $currentPicture; 
     $errors = [];
 
+    // Fullname validation
+    if (!preg_match("/^[a-zA-Z ]+$/", $fullname)) {
+        $errors['fullname'] = "Name must contain only alphabetic characters and spaces.";
+    }
+
     // Email validation
-    if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$|^([a-zA-Z0-9._%+-]+@localhost)$/", $email)) {
+    if (!strpos($email, '@')) {
         $errors['email'] = "Invalid email format.";
     } else {
         // Check if email already exists
@@ -66,7 +71,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    
     if (empty($errors)) {
         $sql = "UPDATE register SET fullname=?, username=?, email=?, birthdate=?, class=?, role=?, status=?, clarify=?, picture=? WHERE memberID=?";
         $stmt = mysqli_prepare($conn, $sql);

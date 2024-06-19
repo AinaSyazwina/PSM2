@@ -12,7 +12,6 @@
 include 'navigation.php';
 include 'config.php';
 
-
 $memberID = isset($_GET['memberID']) ? $_GET['memberID'] : '';
 $errors = $_SESSION['errors'] ?? [];
 $post_data = $_SESSION['post_data'] ?? [];

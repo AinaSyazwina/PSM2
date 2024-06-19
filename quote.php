@@ -269,7 +269,7 @@ $customInfo = $customInfoRow['totalQuotes'];
             <div class="cardName">Total Quotes</div>
         </div>
         <div class="iconBox">
-            <ion-icon name="quote-outline"></ion-icon>
+        <ion-icon name="chatbubbles-outline"></ion-icon>
         </div>
     </div>
 </div>

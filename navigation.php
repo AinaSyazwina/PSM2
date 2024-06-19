@@ -285,6 +285,13 @@ $notifications = fetchNotifications($conn);
                         <span></span>
                  </a>
 
+                 <a href="regulation.php" class=sub-menu-link>
+                        <img src="pic/law-icon-2041x2048-ek40ipuw.png" width="65px">
+                        <p>Regulations</p>
+                        <span></span>
+                 </a>
+
+
                  <a href="faq.php" class=sub-menu-link>
                         <img src="pic/faq-chat-bubble-ask-dialog-web-icon-vector-23828481-removebg-preview.png" width="65px">
                         <p>FAQ</p>
