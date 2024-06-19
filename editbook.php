@@ -34,15 +34,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Price = $_POST['Price'] ?? '';
     $book_acquisition = $_POST['book_acquisition'] ?? '';
 
-    // Validate the price
-    if (!is_numeric($Price) || $Price <= 0) {
+    // Validation
+    if (empty($author1)) {
+        $errors['author1'] = 'Author 1 is required.';
+    }
+    if (empty($Title)) {
+        $errors['Title'] = 'Title is required.';
+    }
+    if (empty($PublishDate)) {
+        $errors['PublishDate'] = 'Publish Date is required.';
+    }
+    if (empty($PublicPlace)) {
+        $errors['PublicPlace'] = 'Publication Place is required.';
+    }
+    if (empty($Copy)) {
+        $errors['Copy'] = 'Copy is required.';
+    } elseif (!ctype_digit($Copy)) {
+        $errors['Copy'] = 'Copy must be an integer.';
+    }
+    if (empty($genre)) {
+        $errors['genre'] = 'Genre is required.';
+    }
+    if (empty($PageNum)) {
+        $errors['PageNum'] = 'Page Number is required.';
+    } elseif (!ctype_digit($PageNum) || intval($PageNum) <= 0) {
+        $errors['PageNum'] = 'Page Number must be a positive integer.';
+    }
+    if (empty($DateReceived)) {
+        $errors['DateReceived'] = 'Date Received is required.';
+    }
+    if (empty($Price)) {
+        $errors['Price'] = 'Price is required.';
+    } elseif (!is_numeric($Price) || floatval($Price) <= 0) {
         $errors['Price'] = 'Price must be a positive number.';
     }
 
-    // Handle picture upload 
+    // Handle picture upload
     if (isset($_FILES['pic']) && $_FILES['pic']['error'] === UPLOAD_ERR_OK) {
         $allowedTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
-        $maxFileSize = 5 * 1024 * 1024; 
+        $maxFileSize = 5 * 1024 * 1024;
         $pic = $_FILES['pic'];
         $fileType = $pic['type'];
         $fileSize = $pic['size'];
@@ -56,10 +86,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 mkdir($uploadDir, 0777, true);
             }
 
-          
             if (move_uploaded_file($pic['tmp_name'], $picturePath)) {
                 $picturePath = mysqli_real_escape_string($conn, $picturePath);
-                $pictureUpdated = true; 
+                $pictureUpdated = true;
             } else {
                 $errors['pic'] = 'There was an error uploading the file.';
             }
@@ -70,7 +99,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // If no errors, proceed to update the book data and box associations
     if (empty($errors)) {
-        
         $updateQuery = "UPDATE books SET author1=?, author2=?, Title=?, PublishDate=?, PublicPlace=?, Copy=?, genre=?, PageNum=?, DateReceived=?, Price=?, book_acquisition=?";
         $updateParams = [$author1, $author2, $Title, $PublishDate, $PublicPlace, $Copy, $genre, $PageNum, $DateReceived, $Price, $book_acquisition];
 
@@ -83,12 +111,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $updateParams[] = $ISBN;
 
         $stmt = mysqli_prepare($conn, $updateQuery);
-        $types = str_repeat('s', count($updateParams)); 
+        $types = str_repeat('s', count($updateParams));
         mysqli_stmt_bind_param($stmt, $types, ...$updateParams);
         $updateResult = mysqli_stmt_execute($stmt);
 
         if ($updateResult) {
-            
             if ($pictureUpdated && !empty($bookData['picture']) && $bookData['picture'] !== $picturePath) {
                 unlink($bookData['picture']);
             }
@@ -108,8 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         mysqli_stmt_close($stmtDelete);
                     } else {
                         // Update the existing association if not blank
-                        $updateBoxQuery = "UPDATE book_distribution SET BoxSerialNum = ?, CopyCount = ? 
-                                           WHERE ISBN = ? AND BoxSerialNum = ?";
+                        $updateBoxQuery = "UPDATE book_distribution SET BoxSerialNum = ?, CopyCount = ? WHERE ISBN = ? AND BoxSerialNum = ?";
                         $stmtBox = mysqli_prepare($conn, $updateBoxQuery);
                         mysqli_stmt_bind_param($stmtBox, 'siss', $BoxSerialNum, $CopyCount, $ISBN, $originalBoxSerialNum);
                         mysqli_stmt_execute($stmtBox);
@@ -124,9 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if ($newBoxSerialNum !== '') {
                         $newCopyCount = $_POST['newCopyCounts'][$index];
 
-                        
-                        $insertBoxQuery = "INSERT INTO book_distribution (ISBN, BoxSerialNum, CopyCount) 
-                                           VALUES (?, ?, ?)";
+                        $insertBoxQuery = "INSERT INTO book_distribution (ISBN, BoxSerialNum, CopyCount) VALUES (?, ?, ?)";
                         $stmtInsert = mysqli_prepare($conn, $insertBoxQuery);
                         mysqli_stmt_bind_param($stmtInsert, 'ssi', $ISBN, $newBoxSerialNum, $newCopyCount);
                         mysqli_stmt_execute($stmtInsert);
@@ -159,18 +183,17 @@ $existingBoxes = mysqli_fetch_all($boxResult, MYSQLI_ASSOC);
 
     <style>
         .form-group .count-label {
-    color: #333;
-    display: block;
-    margin-bottom: 5px;
-    margin-top: 20px; /* Set the same margin-top as other labels */
-    /* Add any other specific styles */
-}
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+            margin-top: 20px; /* Set the same margin-top as other labels */
+            /* Add any other specific styles */
+        }
 
-.error-messages {
-    color: red;
-    margin-bottom: 10px;
-}
-
+        .error-messages {
+            color: red;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -202,7 +225,6 @@ $numberOfAdditionalBoxes = 3 - count($existingBoxes);
 mysqli_close($conn);
 ?>
 
-
 <script>
 document.addEventListener('DOMContentLoaded', (event) => {
     const priceInput = document.getElementById('Price');
@@ -222,7 +244,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 });
-
 </script>
 
 <form action="" method="post" enctype="multipart/form-data">
@@ -242,6 +263,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     <div class='form-group'>
         <label for='author1'>Author 1:</label>
         <input type='text' name='author1' id='author1' value='<?php echo htmlspecialchars($userData['author1'] ?? ''); ?>'>
+        <?php if (isset($errors['author1'])): ?>
+            <div class="error-messages"><?php echo $errors['author1']; ?></div>
+        <?php endif; ?>
     </div>
 
     <div class='form-group'>
@@ -252,29 +276,37 @@ document.addEventListener('DOMContentLoaded', (event) => {
     <div class='form-group'>
         <label for='Title'>Title:</label>
         <input type='text' name='Title' id='Title' value='<?php echo htmlspecialchars($userData['Title'] ?? ''); ?>'>
+        <?php if (isset($errors['Title'])): ?>
+            <div class="error-messages"><?php echo $errors['Title']; ?></div>
+        <?php endif; ?>
     </div>
 
     <div class='form-group'>
         <label for='PublishDate'>Publish Date:</label>
         <input type='date' name='PublishDate' id='PublishDate' value='<?php echo htmlspecialchars($userData['PublishDate'] ?? ''); ?>'>
+        <?php if (isset($errors['PublishDate'])): ?>
+            <div class="error-messages"><?php echo $errors['PublishDate']; ?></div>
+        <?php endif; ?>
     </div>
 
     <div class='form-group'>
         <label for='PublicPlace'>Publication Place:</label>
         <input type='text' name='PublicPlace' id='PublicPlace' value='<?php echo htmlspecialchars($userData['PublicPlace'] ?? ''); ?>'>
+        <?php if (isset($errors['PublicPlace'])): ?>
+            <div class="error-messages"><?php echo $errors['PublicPlace']; ?></div>
+        <?php endif; ?>
     </div>
 
     <div class='form-group'>
-    <label for='Copy'>Copy:</label>
-    <input type='text' name='Copy' id='Copy' value='<?php echo htmlspecialchars($userData['Copy'] ?? ''); ?>'>
-    <?php if (isset($errors['Copy'])): ?>
-        <div class="error-message"><?php echo $errors['Copy']; ?></div>
-    <?php endif; ?>
-</div>
-
+        <label for='Copy'>Copy:</label>
+        <input type='text' name='Copy' id='Copy' value='<?php echo htmlspecialchars($userData['Copy'] ?? ''); ?>'>
+        <?php if (isset($errors['Copy'])): ?>
+            <div class="error-messages"><?php echo $errors['Copy']; ?></div>
+        <?php endif; ?>
+    </div>
 
     <div class="form-group">
-        <label for="genre">genre:</label>
+        <label for="genre">Genre:</label>
         <select name="genre" id="genre">
             <option value=""<?php echo ($userData['genre'] ?? '') === '' ? ' selected' : ''; ?>></option>
             <option value="Romance" <?php echo ($userData['genre'] ?? '') === 'Romance' ? ' selected' : ''; ?>>Romance</option>
@@ -285,31 +317,38 @@ document.addEventListener('DOMContentLoaded', (event) => {
             <option value="Action" <?php echo ($userData['genre'] ?? '') === 'Action' ? ' selected' : ''; ?>>Action</option>
             <option value="Fantasy" <?php echo ($userData['genre'] ?? '') === 'Fantasy' ? ' selected' : ''; ?>>Fantasy</option>
             <option value="Historical" <?php echo ($userData['genre'] ?? '') === 'Historical' ? ' selected' : ''; ?>>Historical</option>
-            
         </select>
+        <?php if (isset($errors['genre'])): ?>
+            <div class="error-messages"><?php echo $errors['genre']; ?></div>
+        <?php endif; ?>
     </div>
 
     <div class='form-group'>
         <label for='PageNum'>Page Number:</label>
         <input type='text' name='PageNum' id='PageNum' value='<?php echo htmlspecialchars($userData['PageNum'] ?? ''); ?>'>
+        <?php if (isset($errors['PageNum'])): ?>
+            <div class="error-messages"><?php echo $errors['PageNum']; ?></div>
+        <?php endif; ?>
     </div>
 
     <div class='form-group'>
         <label for='DateReceived'>Date Received:</label>
         <input type='date' name='DateReceived' id='DateReceived' value='<?php echo htmlspecialchars($userData['DateReceived'] ?? ''); ?>'>
+        <?php if (isset($errors['DateReceived'])): ?>
+            <div class="error-messages"><?php echo $errors['DateReceived']; ?></div>
+        <?php endif; ?>
     </div>
 
     <div class='form-group'>
-    <label for='Price'>Price:</label>
-    <input type='text' name='Price' id='Price' value='<?php echo htmlspecialchars($userData['Price'] ?? ''); ?>' class="<?php echo isset($errors['Price']) ? 'input-error' : ''; ?>">
+        <label for='Price'>Price:</label>
+        <input type='text' name='Price' id='Price' value='<?php echo htmlspecialchars($userData['Price'] ?? ''); ?>' class="<?php echo isset($errors['Price']) ? 'input-error' : ''; ?>">
+        <?php if (isset($errors['Price'])): ?>
+            <div class="error-messages"><?php echo $errors['Price']; ?></div>
+        <?php endif; ?>
+    </div>
 
-    <?php if (isset($errors['Price'])): ?>
-        <div class="error-message"><?php echo $errors['Price']; ?></div>
-    <?php endif; ?>
-</div>
-
-   <!-- Existing Box Associations -->
-   <?php foreach ($existingBoxes as $index => $box): ?>
+    <!-- Existing Box Associations -->
+    <?php foreach ($existingBoxes as $index => $box): ?>
         <div class="form-group">
             <label for="existingBoxSerialNums[<?php echo $index; ?>]">Box Serial Number (Used):</label>
             <input type="hidden" name="originalBoxSerialNums[]" value="<?php echo htmlspecialchars($box['BoxSerialNum']); ?>">
