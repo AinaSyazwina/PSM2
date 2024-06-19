@@ -297,6 +297,11 @@ $notifications = fetchNotifications($conn);
                         <span></span>
                  </a>
 
+                 <a href="contactus.php" class=sub-menu-link>
+                        <img src="pic/pngtree-circle-phone-call-icon-in-black-color-png-image_6596895.png" width="65px">
+                        <p>Contact Us</p>
+                        <span></span>
+                 </a>
 
                  <a href="faq.php" class=sub-menu-link>
                         <img src="pic/faq-chat-bubble-ask-dialog-web-icon-vector-23828481-removebg-preview.png" width="65px">

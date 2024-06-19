@@ -1,22 +1,17 @@
+<?php include 'navigaStu.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life at Nasyaz Company</title>
-    <link rel="stylesheet" href="Cssfile/style3.css">
-    <link rel="stylesheet" href="Cssfile/style4.css">
+    
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-        }
+     
         .header-video-container {
             position: relative;
             width: 100%;
-            height: 70vh; /* Adjust the height as needed */
+            height: 100vh; /* Adjust the height as needed */
             overflow: hidden;
         }
         .header-video-container video {
@@ -128,7 +123,7 @@
     </style>
 </head>
 <body>
-<?php include 'navigation.php'; ?>
+
 
 <div class="header-video-container">
     <video autoplay muted loop>

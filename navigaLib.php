@@ -388,6 +388,7 @@ $notifications = fetchNotifications($conn, $memberID);
                 <a href="LPQuote.php">Quotes</a>
                 <a href="LPDiduKnow.php">Did u Know?</a>
                 <a href="LPregulation.php">Library Etiquette</a>
+                <a href="LPAboutus.php">About Us</a>
                 <a href="LPFAQ.php">FAQ</a>
                 <a href="logout.php">Logout</a>
             </div>

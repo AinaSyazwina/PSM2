@@ -369,6 +369,7 @@ $notifications = fetchNotifications($conn, $memberID);
                 <a href="SChallenge.php">Challenge & rewards</a>
                 <a href="SDiduKnow.php">Did u Know?</a>
                 <a href="SRegulation.php">Library Etiquette</a>
+                <a href="Saboutus.php">About Us</a>
                 <a href="SFAQ.php">FAQ</a>
                 <a href="logout.php">Logout</a>
             </div>

@@ -134,10 +134,9 @@ include 'navigation.php';
 
 <div class="header">
     <h1>Admin Dashboard</h1>
-    <p>Welcome to the SK Kamunting Library Admin Dashboard. <br>Manage library resources, monitor activities, and ensure smooth operations.<br>
-    Our tools and guidelines are designed to help you perform <br> your administrative duties efficiently and effectively.<br>
-    Upholding our core values and commitment to excellence.</p>
+    <p>Welcome to the SK Kamunting Library Admin Dashboard.<br>Admins must adhere to the listed regulations to ensure efficient library<br> management.These guidelines are essential for maintaining a high standard of service<br> and operational excellence.</p>
 </div>
+
 
 <div class="section-container">
     <div class="section" id="section1">
