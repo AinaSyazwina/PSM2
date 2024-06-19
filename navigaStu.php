@@ -350,6 +350,7 @@ $notifications = fetchNotifications($conn, $memberID);
             <a href="SList.php">Book</a>
             <a href="SListBox.php">Box</a>
             <a href="SGuide.php">Guides & Tips</a>
+            <a href="STextBooks.php">Text Books</a>
         </div>
     </div>
 

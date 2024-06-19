@@ -16,7 +16,7 @@
         .header-video-container {
             position: relative;
             width: 100%;
-            height: 70vh; /* Adjust the height as needed */
+            height: 75vh; /* Adjust the height as needed */
             overflow: hidden;
         }
         .header-video-container video {

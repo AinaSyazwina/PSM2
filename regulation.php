@@ -133,8 +133,8 @@ include 'navigation.php';
 <body>
 
 <div class="header">
-    <h1>Admin Dashboard</h1>
-    <p>Welcome to the SK Kamunting Library Admin Dashboard.<br>Admins must adhere to the listed regulations to ensure efficient library<br> management.These guidelines are essential for maintaining a high standard of service<br> and operational excellence.</p>
+    <h1>Regulations</h1>
+    <p>Welcome to the SK Kamunting Library Admin Regulations.<br>Admins must adhere to the listed regulations to ensure efficient library<br> management.These guidelines are essential for maintaining a high standard of service<br> and operational excellence.</p>
 </div>
 
 
