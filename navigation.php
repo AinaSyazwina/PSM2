@@ -291,6 +291,12 @@ $notifications = fetchNotifications($conn);
                         <span></span>
                  </a>
 
+                 <a href="aboutus.php" class=sub-menu-link>
+                        <img src="pic/exclamation-mark-png-exclamation-mark-icon-11563006763v9utxg8tnp.png" width="65px">
+                        <p>About Us</p>
+                        <span></span>
+                 </a>
+
 
                  <a href="faq.php" class=sub-menu-link>
                         <img src="pic/faq-chat-bubble-ask-dialog-web-icon-vector-23828481-removebg-preview.png" width="65px">
