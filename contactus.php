@@ -115,32 +115,32 @@ from finding books and resources to getting help with your admin account. <br>
 <div class="contact-methods">
     <div class="contact-method">
         <h3><i class="fas fa-phone"></i>Call Us</h3>
-        <p>General Enquiries<br>8 a.m. - 5 p.m. from Monday to Thursday and 8 a.m. - 12 p.m. on Friday</p>
+        <p>General Enquiries<br>8 a.m. - 1 p.m. from Monday to Thursday and 8 a.m. - 11.30 a.m. on Friday</p>
         <a href="tel:+60196002402">Tel. +60 19 600 2402</a>
     </div>
     <div class="contact-method">
         <h3><i class="fab fa-whatsapp"></i>WhatsApp Us</h3>
-        <p>A Nasyaz employee will assist you on WhatsApp</p>
+        <p>A librarian  will assist you on WhatsApp</p>
         <a href="http://Www.wassap.my/0196002402/Hello,Aina" target="_blank">Send a message</a>
     </div>
     <div class="contact-method">
         <h3><i class="fas fa-envelope"></i>E-mail Us</h3>
-        <p>A Nasyaz employee will respond as soon as possible</p>
+        <p>A librarian  will respond as soon as possible</p>
         <a href="mailto:nasyazz242@gmail.com">Send an e-mail</a>
     </div>
     <div class="contact-method">
         <h3><i class="fab fa-instagram"></i>Instagram</h3>
-        <p>A Nasyaz ambassador will reply to you via Instagram Messenger</p>
+        <p>A librarian  will reply to you via Instagram Messenger</p>
         <a href="https://www.instagram.com/nasyaz.z?igsh=ZDNxc3kzZ3h1N3Yx&utm_source=qr" target="_blank">Send a message</a>
     </div>
     <div class="contact-method">
         <h3><i class="fab fa-telegram-plane"></i>Telegram</h3>
-        <p>A Nasyaz employee will reply to you via Telegram</p>
+        <p>A librarian  will reply to you via Telegram</p>
         <a href="https://t.me/nasyazzz" target="_blank">Request help</a>
     </div>
     <div class="contact-method">
         <h3><i class="fab fa-facebook-messenger"></i>Message Us</h3>
-        <p>A Nasyaz employee will reply to you via Facebook Messenger</p>
+        <p>A librarian  will reply to you via Facebook Messenger</p>
         <a href="https://www.facebook.com/share/Mituw1PmjfJcr1CC/?mibextid=LQQJ4d" target="_blank">Send a message</a>
     </div>
 </div>
