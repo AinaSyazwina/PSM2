@@ -53,13 +53,13 @@ function displayError($field) {
     <input type="hidden" name="memberID" value="<?php echo htmlspecialchars($memberID); ?>">
 
     <div class="form-group">
-        <label for="fullname">Name:</label>
+        <label for="fullname" class="required">Name:</label>
         <input type="text" name="fullname" id="fullname" value='<?php echo getPostData('fullname', $userData['fullname'] ?? ''); ?>' required>
         <?php displayError('fullname'); ?>
     </div>
 
     <div class="form-group">
-        <label for="IC">Identification Number:</label>
+        <label for="IC" class="required">Identification Number:</label>
         <input type="text" name="IC" id="IC" value='<?php echo htmlspecialchars($userData['IC'] ?? ''); ?>' readonly>
     </div>
 
@@ -70,13 +70,13 @@ function displayError($field) {
     </div>
 
     <div class="form-group">
-        <label for="email">Email:</label>
+        <label for="email" class="required">Email:</label>
         <input type="text" name="email" id="email" value='<?php echo getPostData('email', $userData['email'] ?? ''); ?>' required>
         <?php displayError('email'); ?>
     </div>
 
     <div class="form-group">
-        <label for="birthdate">Birth Date:</label>
+        <label for="birthdate" class="required">Birth Date:</label>
         <input type="date" name="birthdate" id="birthdate" value='<?php echo getPostData('birthdate', $userData['birthdate'] ?? ''); ?>' required>
         <?php displayError('birthdate'); ?>
     </div>
@@ -88,7 +88,7 @@ function displayError($field) {
     </div>
 
     <div class="formradio">
-        <p style="margin-bottom: 10px;">Please select the role</p>
+        <p style="margin-bottom: 10px;" class="required">Please select the role</p>
         <input type="radio" id="admin" name="role" value="admin" <?php echo ($userData['role'] == 'admin') ? 'checked' : ''; ?> required>
         <label for="admin">Administrator</label><br>
         <input type="radio" id="LibPre" name="role" value="LibPre" <?php echo ($userData['role'] == 'LibPre') ? 'checked' : ''; ?> required>
@@ -99,7 +99,7 @@ function displayError($field) {
     </div>
 
     <div class="formradio">
-        <p>Status:</p>
+        <p class="required">Status:</p>
         <input type="radio" id="active" name="status" value="active" <?php echo ($userData['status'] == 'active') ? 'checked' : ''; ?>>
         <label for="active">Active</label><br>
         <input type="radio" id="inactive" name="status" value="inactive" <?php echo ($userData['status'] == 'inactive') ? 'checked' : ''; ?>>
@@ -108,7 +108,7 @@ function displayError($field) {
     </div>
 
     <div class="form-group">
-        <label for="picture">User Picture:</label>
+        <label for="picture" class="required">User Picture:</label>
         <input type="file" name="picture" id="picture">
         <?php if (!empty($userData['picture'])): ?>
             <img src="<?php echo htmlspecialchars($userData['picture']); ?>" alt="Current User Image" style="max-width: 100px; max-height: 100px;">

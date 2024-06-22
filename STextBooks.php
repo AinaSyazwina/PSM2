@@ -6,7 +6,7 @@ include 'navigaStu.php'; ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Books</title>
-    <!-- DataTables CSS -->
+
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
     <style>
         body {
@@ -18,7 +18,7 @@ include 'navigaStu.php'; ?>
 
         .header {
             text-align: center;
-            margin-top: 100px; /* Add space from the top */
+            margin-top: 100px; 
         }
 
         .search-bar {
@@ -50,7 +50,7 @@ include 'navigaStu.php'; ?>
 
         th {
             background-color: #f2f2f2;
-            border-top: none; /* Remove top border from table headers */
+            border-top: none;
         }
 
         tr:hover {
@@ -66,18 +66,79 @@ include 'navigaStu.php'; ?>
             text-decoration: underline;
         }
 
-        /* Modern CSS */
         h1 {
             font-size: 2.5em;
             color: #333;
         }
 
-        .filter-bar select {
-            padding: 10px;
-            font-size: 16px;
+        .dataTables_wrapper .dataTables_filter {
+            text-align: right;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px; 
+        }
+
+        .filter-bar {
+            display: inline-block;
+            position: relative;
+            width: 120px;
+            height: 35px;
+            background-color: #f8f9fa;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-size: 16px;
+            color: #6c757d;
             margin-left: 10px;
+        }
+
+        .filter-bar select {
+            border: none;
+            background: none;
+            font-size: 16px;
+            width: 100%;
+            height: 100%;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding-right: 20px; 
+        }
+
+        .filter-bar::after {
+            content: '▼';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #6c757d;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            color: #333 !important;
+            background-color: white !important;
+            border: 1px solid #ccc !important;
+            border-radius: 4px !important;
+            padding: 5px 10px !important;
+            margin: 2px;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+        .dataTables_wrapper .dataTables_paginate .paginate_button:focus {
+            background-color: #e9ecef !important;
+            border: 1px solid #e9ecef!important;
+            color: #ccc !important;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+            background-color: #e9ecef !important;
+            border: 1px solid #e9ecef !important;
+            color: white !important;
+        }
+
+        .dataTables_wrapper .dataTables_paginate {
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -100,7 +161,7 @@ include 'navigaStu.php'; ?>
             </thead>
             <tbody>
                 <?php
-                // Sample file data
+               
                 $files = [
                     "TextBook/Copy of BAHASA MELAYU T1 SK.pdf",
                     "TextBook/Copy of BAHASA MELAYU T2 SK - JLD2.pdf",
@@ -119,7 +180,7 @@ include 'navigaStu.php'; ?>
                     "TextBook/Copy of PENDIDIKAN ISLAM T5.pdf",
                     "TextBook/Copy of SAINS SK T2.pdf",
                     "TextBook/Copy of SAINS T1 SK.pdf",
-                    "TextBook/Copy of SAINS T1 SK.pdf",
+                   
                     "TextBook/Copy of SCIENCE Y1.pdf",
                     "TextBook/Copy of SCIENCE Y3.pdf",
                     "TextBook/Copy of SCIENCE Y4.pdf",
@@ -137,8 +198,8 @@ include 'navigaStu.php'; ?>
 
                 // Function to extract the first two words from the title and remove unwanted parts
                 function extractFirstTwoWords($title) {
-                    $title = preg_replace('/\b(T\d+|Y\d+|SK|pdf|PART|OF|[-.])\b/', '', $title); // Remove unwanted parts
-                    $title = preg_replace('/[-.]/', '', $title); // Remove remaining hyphens and dots
+                    $title = preg_replace('/\b(T\d+|Y\d+|SK|pdf|PART|OF|[-.])\b/', '', $title); 
+                    $title = preg_replace('/[-.]/', '', $title); 
                     $words = preg_split('/\s+/', trim($title));
                     return implode(' ', array_slice($words, 0, 2));
                 }
@@ -148,7 +209,7 @@ include 'navigaStu.php'; ?>
                     $yearGradeA = extractYearGrade($a);
                     $yearGradeB = extractYearGrade($b);
 
-                    // Extract year number for comparison
+                   
                     preg_match('/\d+/', $yearGradeA, $matchesA);
                     preg_match('/\d+/', $yearGradeB, $matchesB);
 
@@ -161,10 +222,9 @@ include 'navigaStu.php'; ?>
                     return $yearA - $yearB;
                 }
 
-                // Sort the files array
+              
                 usort($files, 'sortBooks');
 
-                // Generate table rows dynamically
                 $no = 1;
                 foreach ($files as $file) {
                     $parts = explode('/', $file);
@@ -172,7 +232,7 @@ include 'navigaStu.php'; ?>
                     $title = str_replace('Copy of ', '', $filename);
                     $shortTitle = extractFirstTwoWords($title);
                     $yearGrade = extractYearGrade($title);
-                    $type = "SK"; // Static type as example
+                    $type = "SK"; 
                     $format = pathinfo($filename, PATHINFO_EXTENSION);
                     echo "<tr data-title='$shortTitle'>
                             <td>$no</td>
@@ -189,24 +249,27 @@ include 'navigaStu.php'; ?>
         </table>
     </div>
 
-    <!-- jQuery -->
+    
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <!-- DataTables JS -->
+   
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 
     <script>
         $(document).ready(function() {
-            // Initialize DataTables
+         
             var table = $('#resourcesTable').DataTable();
             
-            // Append filter to the search box container
-            $('#resourcesTable_filter').append('<select id="filterSelect" class="filter-bar"><option value="all">All</option><option value="mathematics">Mathematics</option><option value="matematik">Matematik</option><option value="sains">SAINS</option></select>');
+            
+            $('#resourcesTable_filter').append('<div class="filter-bar"><select id="filterSelect"><option value="all">All</option><option value="Science">Science</option><option value="mathematics">Mathematics</option><option value="matematik">Matematik</option><option value="sains">Sains</option><option value="bahasa melayu">Bahasa Melayu</option><option value="pendidikan islam">Pendidikan Islam</option></select></div>');
 
-            // Filter function
+            
             $('#filterSelect').on('change', function() {
                 var filter = this.value.toUpperCase();
-                var table = $('#resourcesTable').DataTable();
-                table.search(filter).draw();
+                if (filter === 'ALL') {
+                    table.search('').draw();
+                } else {
+                    table.search(filter).draw();
+                }
             });
         });
     </script>

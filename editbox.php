@@ -109,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="hidden" name="BoxSerialNum" value="<?php echo htmlspecialchars($boxData['BoxSerialNum']); ?>">
 
     <div class="form-group">
-        <label for="category">Category:</label>
+        <label for="category" class="required">Category:</label>
         <select name="category" id="category">
             <option value="BookPanda"<?php echo ($boxData['category'] ?? '') === 'BookPanda' ? ' selected' : ''; ?>>BookPanda</option>
             <option value="GrabBook"<?php echo ($boxData['category'] ?? '') === 'GrabBook' ? ' selected' : ''; ?>>GrabBook</option>
@@ -117,12 +117,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <div class="form-group">
-        <label for="DateCreate">Date Created:</label>
+        <label for="DateCreate" class="required">Date Created:</label>
         <input type="date" name="DateCreate" id="DateCreate" value='<?php echo htmlspecialchars($boxData['DateCreate'] ?? ''); ?>'>
     </div>
 
     <div class="form-group">
-        <label for="BookQuantity">Book Quantity:</label>
+        <label for="BookQuantity" class="required">Book Quantity:</label>
         <input type="text" name="BookQuantity" id="BookQuantity" value='<?php echo htmlspecialchars($boxData['BookQuantity'] ?? ''); ?>'>
         <?php if (!empty($errors['BookQuantity'])): ?>
             <div class="error-message"><?php echo $errors['BookQuantity']; ?></div>
@@ -130,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <div class="form-group">
-        <label for="color">Color:</label>
+        <label for="color" class="required">Color:</label>
         <select name="color" id="color">
             <option value="Pink"<?php echo ($boxData['color'] ?? '') === 'Pink' ? ' selected' : ''; ?>>Pink</option>
             <option value="Green"<?php echo ($boxData['color'] ?? '') === 'Green' ? ' selected' : ''; ?>>Green</option>
@@ -141,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <div class="form-group">
-        <label for="status">Status:</label>
+        <label for="status" class="required">Status:</label>
         <select name="status" id="status">
             <option value="Open(For Issue)"<?php echo ($boxData['status'] ?? '') === 'Open(For Issue)' ? ' selected' : ''; ?>>Open(For Issue)</option>
             <option value="Close(For Issue)"<?php echo ($boxData['status'] ?? '') === 'Close(For Issue)' ? ' selected' : ''; ?>>Close(For Issue)</option>
@@ -149,7 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <div class="form-group">
-        <label for="pic">Box Picture:</label>
+        <label for="pic" class="required">Box Picture:</label>
         <input type="file" name="pic" id="pic">
         <?php if (!empty($boxData['Boxpicture'])): ?>
             <img src="<?php echo htmlspecialchars($boxData['Boxpicture']); ?>" alt="Current Box Image" style="max-width: 100px; max-height: 100px;">

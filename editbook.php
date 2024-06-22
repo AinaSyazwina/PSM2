@@ -251,17 +251,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     <input type="hidden" name="ISBN" value="<?php echo htmlspecialchars($ISBN); ?>">
 
     <div class='form-group'>
-        <label for='book_acquisition'>Book Acquisition:</label>
+        <label for='book_acquisition' class="required">Book Acquisition:</label>
         <input type='text' name='book_acquisition' id='book_acquisition' value='<?php echo htmlspecialchars($userData['book_acquisition'] ?? ''); ?>' readonly>
     </div>
 
     <div class='form-group'>
-        <label for='ISBN'>ISBN:</label>
+        <label for='ISBN' class="required">ISBN:</label>
         <input type='text' name='ISBN' id='ISBN' value='<?php echo htmlspecialchars($userData['ISBN'] ?? ''); ?>' readonly>
     </div>
 
     <div class='form-group'>
-        <label for='author1'>Author 1:</label>
+        <label for='author1' class="required">Author 1:</label>
         <input type='text' name='author1' id='author1' value='<?php echo htmlspecialchars($userData['author1'] ?? ''); ?>'>
         <?php if (isset($errors['author1'])): ?>
             <div class="error-messages"><?php echo $errors['author1']; ?></div>
@@ -269,12 +269,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     </div>
 
     <div class='form-group'>
-        <label for='author2'>Author 2:</label>
+        <label for='author2' >Author 2:</label>
         <input type='text' name='author2' id='author2' value='<?php echo htmlspecialchars($userData['author2'] ?? ''); ?>'>
     </div>
 
     <div class='form-group'>
-        <label for='Title'>Title:</label>
+        <label for='Title' class="required">Title:</label>
         <input type='text' name='Title' id='Title' value='<?php echo htmlspecialchars($userData['Title'] ?? ''); ?>'>
         <?php if (isset($errors['Title'])): ?>
             <div class="error-messages"><?php echo $errors['Title']; ?></div>
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     </div>
 
     <div class='form-group'>
-        <label for='PublishDate'>Publish Date:</label>
+        <label for='PublishDate' class="required">Publish Date:</label>
         <input type='date' name='PublishDate' id='PublishDate' value='<?php echo htmlspecialchars($userData['PublishDate'] ?? ''); ?>'>
         <?php if (isset($errors['PublishDate'])): ?>
             <div class="error-messages"><?php echo $errors['PublishDate']; ?></div>
@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     </div>
 
     <div class='form-group'>
-        <label for='PublicPlace'>Publication Place:</label>
+        <label for='PublicPlace' class="required">Publication Place:</label>
         <input type='text' name='PublicPlace' id='PublicPlace' value='<?php echo htmlspecialchars($userData['PublicPlace'] ?? ''); ?>'>
         <?php if (isset($errors['PublicPlace'])): ?>
             <div class="error-messages"><?php echo $errors['PublicPlace']; ?></div>
@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     </div>
 
     <div class='form-group'>
-        <label for='Copy'>Copy:</label>
+        <label for='Copy' class="required">Copy:</label>
         <input type='text' name='Copy' id='Copy' value='<?php echo htmlspecialchars($userData['Copy'] ?? ''); ?>'>
         <?php if (isset($errors['Copy'])): ?>
             <div class="error-messages"><?php echo $errors['Copy']; ?></div>
@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     </div>
 
     <div class="form-group">
-        <label for="genre">Genre:</label>
+        <label for="genre" class="required">Genre:</label>
         <select name="genre" id="genre">
             <option value=""<?php echo ($userData['genre'] ?? '') === '' ? ' selected' : ''; ?>></option>
             <option value="Romance" <?php echo ($userData['genre'] ?? '') === 'Romance' ? ' selected' : ''; ?>>Romance</option>
@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     </div>
 
     <div class='form-group'>
-        <label for='PageNum'>Page Number:</label>
+        <label for='PageNum' class="required">Page Number:</label>
         <input type='text' name='PageNum' id='PageNum' value='<?php echo htmlspecialchars($userData['PageNum'] ?? ''); ?>'>
         <?php if (isset($errors['PageNum'])): ?>
             <div class="error-messages"><?php echo $errors['PageNum']; ?></div>
@@ -332,7 +332,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     </div>
 
     <div class='form-group'>
-        <label for='DateReceived'>Date Received:</label>
+        <label for='DateReceived' class="required">Date Received:</label>
         <input type='date' name='DateReceived' id='DateReceived' value='<?php echo htmlspecialchars($userData['DateReceived'] ?? ''); ?>'>
         <?php if (isset($errors['DateReceived'])): ?>
             <div class="error-messages"><?php echo $errors['DateReceived']; ?></div>
@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     </div>
 
     <div class='form-group'>
-        <label for='Price'>Price:</label>
+        <label for='Price' class="required">Price:</label>
         <input type='text' name='Price' id='Price' value='<?php echo htmlspecialchars($userData['Price'] ?? ''); ?>' class="<?php echo isset($errors['Price']) ? 'input-error' : ''; ?>">
         <?php if (isset($errors['Price'])): ?>
             <div class="error-messages"><?php echo $errors['Price']; ?></div>
