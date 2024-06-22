@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>Password Reset Request</h1>
             <p>We have received a request to reset the password associated with this email address. If you did not initiate this request, please disregard this email, and no further action is required. The password reset link will automatically expire within 30 minutes for your security.</p>
             <p>If you requested this password reset, please click the link below to set up a new password:</p>
-            <a href='http://localhost/library/forgot1.php?token=$token'>Set Up New Password</a>
+            <a href='http://localhost/psm2/forgot1.php?token=$token'>Set Up New Password</a>
             <p>If you encounter any issues with resetting your password, please contact our support team.</p>
             <p>Thank you for your attention to this matter.</p>
             <p>Regards,</p>
