@@ -443,8 +443,8 @@ function scrollToLeft(selector) {
     const container = document.querySelector(selector);
     container.scrollBy({
         top: 0,
-        left: -300, // Negative value for left scrolling
-        behavior: 'smooth' // Optional: for smooth scrolling
+        left: -300, 
+        behavior: 'smooth' 
     });
 }
 
@@ -453,8 +453,8 @@ function scrollRight(selector) {
     const container = document.querySelector(selector);
     container.scrollBy({
         top: 0,
-        left: 300, // Positive value for right scrolling
-        behavior: 'smooth' // Optional: for smooth scrolling
+        left: 300,
+        behavior: 'smooth' 
     });
 }
 
@@ -505,13 +505,13 @@ $(document).ready(function() {
         $.ajax({
             url: 'recommend.php',
             type: 'GET',
-            data: { member_id: '<?= $memberID ?>' }, // Changed from user_id to member_id
+            data: { member_id: '<?= $memberID ?>' }, 
             success: function(data) {
                 var recommendations = JSON.parse(data);
                 if (recommendations.length > 0) {
-                    $('.recommendations .rankings-recommend').empty(); // Clear existing items
+                    $('.recommendations .rankings-recommend').empty(); 
                     recommendations.forEach(function(book) {
-                        fetchBookDetails(book); // Function to get book details and display them
+                        fetchBookDetails(book); 
                     });
                 } else {
                     $('.recommendations .rankings-recommend').html('<p>No recommendations available.</p>');
