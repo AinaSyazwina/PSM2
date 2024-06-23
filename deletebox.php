@@ -12,7 +12,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->affected_rows > 0) {
         echo "Box deleted successfully";
     } else {
-        echo "Error: could not delete box";
+        if ($stmt->errno == 1451) { 
+            echo "Cannot delete, item is already a foreign key";
+        } else {
+            echo "Error: could not delete box";
+        }
     }
 
     $stmt->close();

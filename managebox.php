@@ -244,8 +244,10 @@ $totalPages = ceil($totalRecords / $recordsPerPage);
                     setTimeout(function() {
                         closeDeleteSuccessPopup(); // Close the success popup after a delay
                     }, 3000);
+                } else if (this.responseText.trim() === "Cannot delete, item is already a foreign key") {
+                    alert("Cannot delete, item is already a foreign key.");
                 } else {
-                    console.error("Error: could not delete box");
+                    alert("Cannot delete, item is already a foreign key");
                 }
             }
         };

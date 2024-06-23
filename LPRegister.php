@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'] ?? '';
     $role = $_POST['role'] ?? '';
     $status = $_POST['status'] ?? '';
-    $clarify = $_POST['clarify'] ?? '';
+    //$clarify = $_POST['clarify'] ?? '';
     $hashed_password = $_POST['hashed_password'] ?? '';
 
     // Validation for IC
@@ -139,12 +139,12 @@ if (isset($_FILES['picture'])) {
         $class = mysqli_real_escape_string($conn, $class);
         $username = mysqli_real_escape_string($conn, $username);
         $role = mysqli_real_escape_string($conn, $_POST['role']);
-        $clarify = isset($_POST['clarify']) ? mysqli_real_escape_string($conn, $_POST['clarify']) : '';
+       // $clarify = isset($_POST['clarify']) ? mysqli_real_escape_string($conn, $_POST['clarify']) : '';
 
-        $sql = "INSERT INTO register (fullname, IC, email, birthdate, memberID, class, username, pwd, role, clarify, status, picture)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO register (fullname, IC, email, birthdate, memberID, class, username, pwd, role, status, picture)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, "ssssssssssss", $fullname, $IC, $email, $birthdate, $memberID, $class, $username, $hashed_password, $role, $clarify, $status, $picturePath);
+        mysqli_stmt_bind_param($stmt, "sssssssssss", $fullname, $IC, $email, $birthdate, $memberID, $class, $username, $hashed_password, $role, $status, $picturePath);
 
 
         if (mysqli_stmt_execute($stmt)) {
@@ -331,8 +331,8 @@ if (isset($_FILES['picture'])) {
 
     <hr>
     <br>
-    <input type="checkbox" id="clarify" name="clarify" value="clarify" require>
-    <label for="clarify" class="required"> I hereby confirm the details in registration form</label><br>
+   <!-- <input type="checkbox" id="clarify" name="clarify" value="clarify" require>
+    <label for="clarify" class="required"> I hereby confirm the details in registration form</label><br> -->
 
     <div class="button">
         <input type="submit" class="btn" name="submit" value="Register">

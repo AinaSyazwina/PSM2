@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     <div class='form-group'>
         <label for='DateReceived' class="required">Date Received:</label>
-        <input type='date' name='DateReceived' id='DateReceived' value='<?php echo htmlspecialchars($userData['DateReceived'] ?? ''); ?>'>
+        <input type='date' name='DateReceived' id='DateReceived' value='<?php echo htmlspecialchars($userData['DateReceived'] ?? ''); ?>'readonly>
         <?php if (isset($errors['DateReceived'])): ?>
             <div class="error-messages"><?php echo $errors['DateReceived']; ?></div>
         <?php endif; ?>

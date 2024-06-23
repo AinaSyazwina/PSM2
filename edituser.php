@@ -54,7 +54,7 @@ function displayError($field) {
 
     <div class="form-group">
         <label for="fullname" class="required">Name:</label>
-        <input type="text" name="fullname" id="fullname" value='<?php echo getPostData('fullname', $userData['fullname'] ?? ''); ?>' required>
+        <input type="text" name="fullname" id="fullname" value='<?php echo getPostData('fullname', $userData['fullname'] ?? ''); ?>' readonly>>
         <?php displayError('fullname'); ?>
     </div>
 
@@ -65,7 +65,7 @@ function displayError($field) {
 
     <div class="form-group">
         <label for="username" class="required">Username:</label>
-        <input type="text" name="username" id="username" value='<?php echo getPostData('username', $userData['username'] ?? ''); ?>' required>
+        <input type="text" name="username" id="username" value='<?php echo getPostData('username', $userData['username'] ?? ''); ?>' readonly>>
         <?php displayError('username'); ?>
     </div>
 
@@ -120,8 +120,8 @@ function displayError($field) {
     <br>  
     <hr>
     <br>
-    <input type="checkbox" id="clarify" name="clarify" value="clarify" <?php echo ($userData['clarify'] == 'clarify') ? 'checked' : ''; ?> required>
-    <label for="clarify"> I hereby confirm the details in registration form</label><br>
+   <!-- <input type="checkbox" id="clarify" name="clarify" value="clarify" <?php echo ($userData['clarify'] == 'clarify') ? 'checked' : ''; ?> required>
+    <label for="clarify"> I hereby confirm the details in registration form</label><br> -->
 
     <div class="addBtn">
         <input type="submit" name="updateBtn" value="Update">

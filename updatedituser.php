@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $class = $_POST['class'] ?? '';
     $role = $_POST['role'] ?? '';
     $status = $_POST['status'] ?? '';
-    $clarify = $_POST['clarify'] ?? '';
+    //$clarify = $_POST['clarify'] ?? '';
     $currentPicture = $_POST['currentPicture'] ?? ''; 
 
     $picturePath = $currentPicture; 
@@ -72,9 +72,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($errors)) {
-        $sql = "UPDATE register SET fullname=?, username=?, email=?, birthdate=?, class=?, role=?, status=?, clarify=?, picture=? WHERE memberID=?";
+        $sql = "UPDATE register SET fullname=?, username=?, email=?, birthdate=?, class=?, role=?, status=?, picture=? WHERE memberID=?";
         $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, 'ssssssssss', $fullname, $username, $email, $birthdate, $class, $role, $status, $clarify, $picturePath, $memberID);
+        mysqli_stmt_bind_param($stmt, 'sssssssss', $fullname, $username, $email, $birthdate, $class, $role, $status, $picturePath, $memberID);
         
         if (mysqli_stmt_execute($stmt)) {
             header("Location: manageuser.php?success=true");
