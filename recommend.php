@@ -6,11 +6,10 @@ $waitTimeoutInSeconds = 1;
 
 // Attempt to connect to the Flask server
 if ($fp = @fsockopen($host, $port, $errCode, $errStr, $waitTimeoutInSeconds)) {
-    fclose($fp); // Close the connection if it's successful
+    fclose($fp); 
 } else {
-    // Start the Flask server if it's not running
     exec('C:\\xampp\\htdocs\\library\\run_flask.bat');
-    sleep(5);  // Give it some time to start
+    sleep(5); 
 }
 
 session_start();
