@@ -181,17 +181,16 @@ document.getElementById('BoxSerialNum').addEventListener('change', fetchBoxDetai
 
 //issue func
 async function issueBox(event) {
-    event.preventDefault();  // Prevent default form submission
+    event.preventDefault(); 
 
     var memberID = document.getElementById('memberID').value.trim();
     var BoxSerialNum = document.getElementById('BoxSerialNum').value.trim();
     var borrowDate = document.getElementById('borrowDate').value.trim();
     var dueDate = document.getElementById('dueDate').value.trim();
 
-    // Check if the user has exceeded the borrowing limit before proceeding
     const canBorrow = await checkBoxBorrowLimit(memberID);
     if (!canBorrow) {
-        return; // Stop the function if the borrowing limit is reached
+        return; 
     }
 
     var missingFields = [];
@@ -216,7 +215,6 @@ async function issueBox(event) {
     formData.append('borrowDate', borrowDate);
     formData.append('dueDate', dueDate);
 
-    // Post the form data to the PHP script
     fetch('issueBox1.php', {
         method: 'POST',
         body: formData
@@ -224,10 +222,10 @@ async function issueBox(event) {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            togglePopup('issueSuccessPopup', true); // Show success popup
-            document.getElementById('issueForm').reset(); // Reset the form fields
+            togglePopup('issueSuccessPopup', true); 
+            document.getElementById('issueForm').reset(); 
         } else {
-            alert('Failed to issue box. Error: ' + data.error); // Show error returned from the server
+            alert('Failed to issue box. Error: ' + data.error); 
         }
     })
     .catch(error => {
@@ -289,7 +287,6 @@ function searchMember(isScan) {
                 document.getElementById('IC').value = data.IC;
                 document.getElementById('class').value = data.class;
 
-                // Fetch and update the sidebar data
                 fetchAndDisplayBoxLimit(memberID);
             } else if (!isScan) {
                 alert('Member not found or inactive.');
@@ -363,9 +360,9 @@ function checkBoxBorrowLimit(memberID) {
         .then(data => {
             if (data.currentlyBorrowed >= 2) {
                 alert("You have reached your borrowing limit for boxes. Please return some boxes to borrow more.");
-                return false; // Indicate that the limit has been reached
+                return false;
             }
-            return true; // Indicate that the user can borrow more boxes
+            return true;
         })
         .catch(error => {
             console.error('Error:', error);
